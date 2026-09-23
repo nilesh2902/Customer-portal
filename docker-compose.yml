@@ -1,0 +1,17 @@
+services:
+  customer-portal:
+    build: .
+    container_name: customer-portal
+    env_file:
+      - .env
+    environment:
+      NODE_OPTIONS: --require @opentelemetry/auto-instrumentations-node/register
+    ports:
+      - "${APP_PORT:-3001}:3001"
+    restart: unless-stopped
+    networks:
+      - codexray-network
+
+networks:
+  codexray-network:
+    external: true

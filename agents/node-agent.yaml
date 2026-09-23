@@ -1,0 +1,32 @@
+version: "3.8"
+
+
+services:
+    node-agent:
+      image: ghcr.io/codifinary/codexray-node-agent:539dadd
+      container_name: codexray-node-agent-1
+      restart: always
+      privileged: true
+      pid: host
+      mem_limit: 2g
+      memswap_limit: 2g
+      command:
+        - --collector-endpoint=
+        - --cgroupfs-root=/host/sys/fs/cgroup
+        - --wal-dir=/tmp
+        - --api-key=
+      volumes:
+        - /sys/fs/cgroup:/host/sys/fs/cgroup:ro
+        - /sys/kernel/tracing:/sys/kernel/tracing
+        - /sys/kernel/debug:/sys/kernel/debug
+        - node_agent_wal:/data
+      networks:
+        - codexray-network
+
+networks:
+    codexray-network:
+      external: true
+      name: codexray-network
+
+volumes:
+    node_agent_wal:

@@ -3,7 +3,7 @@ const express = require("express");
 const winston = require("winston");
 
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,7 +48,7 @@ app.get("/", (req, res) => {
 
   res.json({
     status: "success",
-    message: "Customer Portal Running"
+    message: "demo node-test -app Running"
   });
 });
 
@@ -155,7 +155,7 @@ app.get("/exception", (req, res) => {
 
   logger.error("Throwing exception intentionally");
 
-  throw new Error("Sample exception from customer portal");
+  throw new Error("Sample exception from demo node-test -app");
 });
 
 /*
@@ -220,5 +220,5 @@ app.use((err, req, res, next) => {
 
 app.listen(PORT, () => {
 
-  logger.info(`Customer Portal started on port ${PORT}`);
+  logger.info(`demo node-test -app started on port ${PORT}`);
 });
