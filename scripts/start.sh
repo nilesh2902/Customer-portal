@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export OTEL_SERVICE_NAME=demo-node-test-app
+export OTEL_SERVICE_NAME=customer-portal-v
 
 export OTEL_RESOURCE_ATTRIBUTES="deployment.environment=poc,service.version=1.0.0"
 
