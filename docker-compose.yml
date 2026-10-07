@@ -1,7 +1,7 @@
 services:
-  customer-portal:
+  customer-portal-v:
     build: .
-    container_name: customer-portal
+    container_name: customer-portal-v
     env_file:
       - .env
     environment:

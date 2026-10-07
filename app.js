@@ -48,7 +48,7 @@ app.get("/", (req, res) => {
 
   res.json({
     status: "success",
-    message: "demo node-test -app Running"
+    message: "customer-portal-v Running"
   });
 });
 
@@ -155,7 +155,7 @@ app.get("/exception", (req, res) => {
 
   logger.error("Throwing exception intentionally");
 
-  throw new Error("Sample exception from demo node-test -app");
+  throw new Error("Sample exception from customer-portal-v");
 });
 
 /*
@@ -220,5 +220,5 @@ app.use((err, req, res, next) => {
 
 app.listen(PORT, () => {
 
-  logger.info(`demo node-test -app started on port ${PORT}`);
+  logger.info(`customer-portal-v started on port ${PORT}`);
 });
